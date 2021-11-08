@@ -1,0 +1,119 @@
+
+
+*{
+    transition: all .3s;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+section h1{
+    text-align: center;
+    font-size: 5rem;
+    text-shadow: 0 .5rem 1rem rgba(255, 255, 255, 0.5);
+    margin: 0;
+
+}
+.box-container{
+display: flex; 
+justify-content:center;
+align-items: center;
+flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    height: 100vh;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+
+.box-container .box{
+   flex: 1 1 50rem;
+    text-align: center;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin: 0;
+    border-radius: .5rem;
+
+}
+.box-container .box i{
+    padding-top: 1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+    color:rgba(255, 0, 0, 0.5);
+    transition: all 1s;
+
+
+}
+ @keyframes heart {
+     0%{
+        transform:perspective(80rem) scale(1);
+     }
+     50%{
+        transform:perspective(80rem) scale(.9);
+     }
+
+          100%{
+            transform:perspective(80rem) scale(1.1);
+
+     }
+
+ }
+.box-container .box .content{
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.box-container .box h2{
+
+    font-size: 3.5rem;
+    border-radius: 5rem;
+    color: #333;
+    border-radius: 5rem;
+    border-bottom: .5rem solid rgba(192, 231, 17, 0.5);
+
+
+}
+.box-container .box p{
+    margin:  1rem 2rem;
+    border-radius: .5rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color:  #666;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+
+}
+
+
+.box-container .box::before{
+content: '';    
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+clip-path: circle(30% at 5% 0);
+background-color: rgba(192, 231, 17, 0.8);
+z-index: -1;     height: 100%;
+transition: all 1s linear;
+}
+.box-container .box:hover  * {
+color: white;    
+    }
+    .box-container .box:hover::before{
+        clip-path: circle(100%);
+    
+            }
+
+            .box-container .box:hover i{
+                animation: heart 1s linear infinite;
+                color: red;
+            
+                    }
